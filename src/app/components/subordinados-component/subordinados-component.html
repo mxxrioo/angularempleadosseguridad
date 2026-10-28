@@ -1,0 +1,22 @@
+<h1 style="color:blue">Mis subordinados</h1>
+@if (cargando) {
+  <p>Cargando subordinados...</p>
+} @else if (mensaje) {
+  <p style="color:red" role="alert">{{mensaje}}</p>
+} @else if (empleados.length === 0) {
+  <p>No tienes subordinados.</p>
+} @else {
+  <table border="1" cellpadding="8">
+    <thead>
+      <tr><th>Número</th><th>Apellido</th><th>Oficio</th><th>Salario</th><th>Director</th></tr>
+    </thead>
+    <tbody>
+      @for (empleado of empleados; track empleado.idEmpleado) {
+        <tr>
+          <td>{{empleado.idEmpleado}}</td><td>{{empleado.apellido}}</td>
+          <td>{{empleado.oficio}}</td><td>{{empleado.salario}}</td><td>{{empleado.director}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

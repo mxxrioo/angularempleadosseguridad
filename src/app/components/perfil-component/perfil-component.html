@@ -1,0 +1,15 @@
+<h1 style="color:blue">Mi perfil</h1>
+@if (cargando) {
+  <p>Cargando perfil...</p>
+}
+@if (mensaje) {
+  <p style="color:red" role="alert">{{mensaje}}</p>
+}
+@if (empleado) {
+  <h2>{{empleado.apellido}}</h2>
+  <p>Número de empleado: {{empleado.idEmpleado}}</p>
+  <p>Oficio: {{empleado.oficio}}</p>
+  <p>Salario: {{empleado.salario}}</p>
+  <p>Director: {{empleado.director}}</p>
+  <a [routerLink]="['/subordinados']">Ver mis subordinados</a>
+}

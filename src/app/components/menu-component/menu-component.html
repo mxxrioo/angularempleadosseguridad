@@ -1,0 +1,8 @@
+<ul id="menu">
+  <li><a [routerLink]="['/login']">Login | </a></li>
+  <li><a [routerLink]="['/perfil']">Perfil | </a></li>
+  <li><a [routerLink]="['/subordinados']">Subordinados</a></li>
+  @if (_service.getToken()) {
+    <li> | <button (click)="cerrarSesion()">Cerrar sesión</button></li>
+  }
+</ul>
